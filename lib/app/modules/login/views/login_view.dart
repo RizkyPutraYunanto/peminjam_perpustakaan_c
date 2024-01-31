@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -49,7 +50,10 @@ class LoginView extends GetView<LoginController> {
                       controller.login();
                     },
                     child: Text('Login'),
-                  )),
+                  )
+                  ),
+                  ElevatedButton(onPressed: ()=>Get.toNamed(Routes.REGISTER),
+                      child: Text("Open Register"))
                 ])),
       ),
     );

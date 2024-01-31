@@ -8,6 +8,7 @@ import 'package:peminjam_perpustakaan_c/app/data/provider/api_provider.dart';
 import 'package:peminjam_perpustakaan_c/app/data/provider/storage_provider.dart';
 
 import '../../../data/konstan/end_point.dart';
+import '../../../data/model/respon_login.dart';
 import '../../../routes/app_pages.dart';
 
 class LoginController extends GetxController {
@@ -48,7 +49,9 @@ class LoginController extends GetxController {
             }));
 
         if (response.statusCode == 200) {
+          final ResponLogin responseLogin = ResponLogin.fromJson(response.data);
           await StorageProvider.write(StorageKey.status, "logged");
+          await StorageProvider.write(StorageKey.iduser, responseLogin.data!.id!.toString());
           Get.offAllNamed(Routes.HOME);
         } else {
           Get.snackbar("Sorry", "Login Gagal", backgroundColor: Colors.orange);
