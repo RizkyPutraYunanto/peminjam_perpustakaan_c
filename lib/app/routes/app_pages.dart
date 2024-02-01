@@ -43,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PEMINJAM,
-      page: () => const PeminjamView(),
+      page: () => const PeminjamanView(),
       binding: PeminjamBinding(),
     ),
     GetPage(

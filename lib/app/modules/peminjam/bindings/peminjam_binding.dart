@@ -5,8 +5,8 @@ import '../controllers/peminjam_controller.dart';
 class PeminjamBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<PeminjamController>(
-      () => PeminjamController(),
+    Get.lazyPut<PeminjamanController>(
+      () => PeminjamanController(),
     );
   }
 }
